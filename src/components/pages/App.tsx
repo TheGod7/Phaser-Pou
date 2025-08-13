@@ -1,9 +1,5 @@
 function App() {
-    return (
-        <div className="flex justify-center items-center w-full h-full">
-            Hello World
-        </div>
-    );
+    return <div className="w-full h-screen bg-black/90 text-white"></div>;
 }
 
 export default App;

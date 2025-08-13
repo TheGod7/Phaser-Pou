@@ -16,7 +16,14 @@ function App() {
             });
         }
     }, []);
-    return <div id="app">{fontLoaded ? <PhaserGame /> : null}</div>;
+    return (
+        <div
+            id="app"
+            className="w-full h-screen overflow-hidden flex justify-center items-center bg-black/90"
+        >
+            {fontLoaded ? <PhaserGame /> : null}
+        </div>
+    );
 }
 
 export default App;
