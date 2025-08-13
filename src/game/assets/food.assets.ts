@@ -35,7 +35,7 @@ export default [
         type: "Image",
     },
     {
-        image: "/assets/ui/food/red_de_pesca.png",
+        image: "/assets/ui/food/Red_de_pesca.png",
         key: "red_de_pesca",
         type: "Image",
     },

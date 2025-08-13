@@ -30,7 +30,7 @@ export default [
         type: "Image",
     },
     {
-        image: "/assets/ui/ico/ball.png",
+        image: "/assets/ui/ico/Ball.png",
         key: "ball",
         type: "Image",
     },
