@@ -28,10 +28,12 @@
     },
     "dependencies": {
         "@tailwindcss/vite": "^4.1.11",
+        "@types/react-syntax-highlighter": "^15.5.13",
         "phaser": "^3.90.0",
         "phaser3-rex-plugins": "^1.80.16",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
+        "react-syntax-highlighter": "^15.6.1",
         "tailwindcss": "^4.1.11",
         "tone": "^15.1.22"
     },
