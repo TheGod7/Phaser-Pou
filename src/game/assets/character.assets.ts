@@ -164,12 +164,12 @@ export default [
     {
         type: "Audio",
         key: "EatSound",
-        audio: "/public/assets/sfx/character/eat.wav",
+        audio: "/assets/sfx/character/eat.wav",
     },
 
     {
         type: "Audio",
         key: "NoSound",
-        audio: "/public/assets/sfx/character/no.wav",
+        audio: "/assets/sfx/character/no.wav",
     },
 ] as AssetsElement[];
