@@ -2,7 +2,7 @@ export default [
     {
         key: "CharacterEyes",
         type: "SpriteSheet",
-        image: "/public/assets/ui/character/eyes.png",
+        image: "/assets/ui/character/eyes.png",
         frameConfig: {
             frameWidth: 122,
             frameHeight: 122,
@@ -11,7 +11,7 @@ export default [
     {
         key: "CharacterAnimationSpriteSheet",
         type: "SpriteSheet",
-        image: "/public/assets/ui/character/CharacterAnim.png",
+        image: "/assets/ui/character/CharacterAnim.png",
         frameConfig: {
             frameWidth: 1024,
             frameHeight: 1024,
@@ -20,7 +20,7 @@ export default [
     {
         key: "CharacterWithoutEyes",
         type: "SpriteSheet",
-        image: "/public/assets/ui/character/CharacterWithoutEyes.png",
+        image: "/assets/ui/character/CharacterWithoutEyes.png",
         frameConfig: {
             frameWidth: 1024,
             frameHeight: 1024,
@@ -29,7 +29,7 @@ export default [
     {
         key: "SwimmingCharacter",
         type: "SpriteSheet",
-        image: "/public/assets/ui/character/SwimmingCharacter.png",
+        image: "/assets/ui/character/SwimmingCharacter.png",
         frameConfig: {
             frameWidth: 400,
             frameHeight: 400,
