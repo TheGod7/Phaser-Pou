@@ -5,7 +5,7 @@ import {
     useRef,
     useState,
 } from "react";
-import StartGame from "./game/main";
+import StartGame from "./../game/main";
 
 export interface IRefPhaserGame {
     game: Phaser.Game | null;

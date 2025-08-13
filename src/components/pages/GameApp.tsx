@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { PhaserGame } from "./PhaserGame";
+import { PhaserGame } from "../PhaserGame";
 
 function App() {
     const [fontLoaded, setFontLoaded] = useState(false);
