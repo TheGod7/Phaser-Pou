@@ -172,7 +172,7 @@ export default class MemoryMatch extends Phaser.Scene {
                         );
                         this.MemoryGame.destroy();
 
-                        this.MemoryGame = this.HorizontalRectangle();
+                        this.MemoryGame = this.verticalRectangle();
 
                         this.addCoin();
                         this.ProgressBar.setValue(1);
@@ -296,7 +296,7 @@ export default class MemoryMatch extends Phaser.Scene {
                         );
                         this.MemoryGame.destroy();
 
-                        this.MemoryGame = this.verticalRectangle();
+                        this.MemoryGame = this.HorizontalRectangle();
 
                         this.addCoin();
                         this.ProgressBar.setValue(1);
