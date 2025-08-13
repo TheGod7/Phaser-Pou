@@ -1,4 +1,4 @@
-import MemoryMatch from "../../game/scenes/MiniGame/MemoryMatch";
+import MemoryMatch from "../../scenes/MiniGame/MemoryMatch";
 
 export class MemoryMatchCard extends Phaser.GameObjects.Container {
     isFront = false;

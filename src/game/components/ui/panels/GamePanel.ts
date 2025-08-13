@@ -1,8 +1,8 @@
 import Sizer from "phaser3-rex-plugins/templates/ui/sizer/Sizer";
 import { ImgButton } from "../ImageButton";
-import { MainMenu } from "../../../game/scenes/Game/MainMenu";
+import { MainMenu } from "../../../scenes/Game/MainMenu";
 import { ButtonText } from "../TextButton";
-import { RoomsManager } from "../../../game/scenes/Rooms/Rooms";
+import { RoomsManager } from "../../../scenes/Rooms/Rooms";
 
 const GamesICo = ["FoodDrop", "FlappyBird", "MemoryMatch"];
 

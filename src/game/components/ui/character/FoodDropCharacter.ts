@@ -1,6 +1,6 @@
 import Phaser from "phaser";
-import FoodDrop from "../../../game/scenes/MiniGame/FoodDrop";
-import { FoodsStats, FoodTypes } from "../../../game/PouState";
+import FoodDrop from "../../../scenes/MiniGame/FoodDrop";
+import { FoodsStats, FoodTypes } from "../../../PouState";
 import { soundManager } from "../utils/sound";
 
 interface Eyes {

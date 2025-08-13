@@ -2,8 +2,8 @@ import Phaser from "phaser";
 import Sizer from "phaser3-rex-plugins/templates/ui/sizer/Sizer";
 
 import { ButtonText } from "../TextButton";
-import { MainMenu } from "../../../game/scenes/Game/MainMenu";
-import { MiniGames } from "../../../game/PouState";
+import { MainMenu } from "../../../scenes/Game/MainMenu";
+import { MiniGames } from "../../../PouState";
 
 export class PausePanel extends Sizer {
     private Hitbox: Phaser.GameObjects.Rectangle;

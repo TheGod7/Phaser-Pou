@@ -1,7 +1,7 @@
 import GridSizer from "phaser3-rex-plugins/templates/ui/gridsizer/GridSizer";
-import { GameStats } from "../../../components/minigames/GameStats";
-import { MemoryMatchCard } from "../../../components/minigames/MemoryMatchCard";
-import { soundManager } from "../../../components/ui/utils/sound";
+import { GameStats } from "../../components/minigames/GameStats";
+import { MemoryMatchCard } from "../../components/minigames/MemoryMatchCard";
+import { soundManager } from "../../components/ui/utils/sound";
 import { Foods } from "../../PouState";
 import { GameManager } from "../Game/GameManager";
 import { MainMenu } from "../Game/MainMenu";

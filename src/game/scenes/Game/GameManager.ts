@@ -1,7 +1,7 @@
 import { Scene } from "phaser";
 import { FoodsStats, FoodTypes, PouStates } from "../../PouState";
 import { MainMenu } from "./MainMenu";
-import { BarTypes } from "../../../components/ui/rooms/StatusBar";
+import { BarTypes } from "../../components/ui/rooms/StatusBar";
 
 export class GameManager extends Scene {
     HungerTimer: Phaser.Time.TimerEvent;

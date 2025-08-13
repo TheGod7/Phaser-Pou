@@ -1,7 +1,7 @@
-import { SpawnFoodZone } from "../../../components/minigames/FoodSpawner";
-import { GameStats } from "../../../components/minigames/GameStats";
-import { FoodDropCharacter } from "../../../components/ui/character/FoodDropCharacter";
-import { soundManager } from "../../../components/ui/utils/sound";
+import { SpawnFoodZone } from "../../components/minigames/FoodSpawner";
+import { GameStats } from "../../components/minigames/GameStats";
+import { FoodDropCharacter } from "../../components/ui/character/FoodDropCharacter";
+import { soundManager } from "../../components/ui/utils/sound";
 import { GameManager } from "../Game/GameManager";
 import { MainMenu } from "../Game/MainMenu";
 

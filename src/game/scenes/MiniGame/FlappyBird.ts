@@ -1,5 +1,5 @@
-import { GameStats } from "../../../components/minigames/GameStats";
-import { soundManager } from "../../../components/ui/utils/sound";
+import { GameStats } from "../../components/minigames/GameStats";
+import { soundManager } from "../../components/ui/utils/sound";
 import { GameManager } from "../Game/GameManager";
 import { MainMenu } from "../Game/MainMenu";
 // 52x320

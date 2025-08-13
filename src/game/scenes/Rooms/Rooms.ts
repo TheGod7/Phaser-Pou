@@ -1,11 +1,11 @@
 import { Scene } from "phaser";
-import { BackgroundRooms } from "../../../components/ui/rooms/Background";
-import { Character } from "../../../components/ui/character/Character";
-import { RoomSelector } from "../../../components/ui/rooms/RoomSelector";
-import { kitchenMenu } from "../../../components/ui/rooms/KitchenBottomMenu";
-import { BedroomBottomMenu } from "../../../components/ui/rooms/BedroomBottomMenu";
-import { LivingRoomMenu } from "../../../components/ui/rooms/LivingroomBottomMenu";
-import { GameRoomBottomMenu } from "../../../components/ui/rooms/GameRoomBottomMenu";
+import { BackgroundRooms } from "../../components/ui/rooms/Background";
+import { Character } from "../../components/ui/character/Character";
+import { RoomSelector } from "../../components/ui/rooms/RoomSelector";
+import { kitchenMenu } from "../../components/ui/rooms/KitchenBottomMenu";
+import { BedroomBottomMenu } from "../../components/ui/rooms/BedroomBottomMenu";
+import { LivingRoomMenu } from "../../components/ui/rooms/LivingroomBottomMenu";
+import { GameRoomBottomMenu } from "../../components/ui/rooms/GameRoomBottomMenu";
 
 export class RoomsManager extends Scene {
     CurrentRoom: number = 0;

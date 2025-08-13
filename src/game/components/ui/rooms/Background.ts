@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import { PouConfig } from "../../../game/PouState";
+import { PouConfig } from "../../../PouState";
 
 export class BackgroundRooms extends Phaser.GameObjects.Image {
     constructor(scene: Phaser.Scene, Room: number) {

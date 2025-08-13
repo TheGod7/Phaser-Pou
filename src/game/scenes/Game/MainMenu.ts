@@ -1,13 +1,13 @@
 import { Scene } from "phaser";
-import { StatusBar } from "../../../components/ui/rooms/StatusBar";
+import { StatusBar } from "../../components/ui/rooms/StatusBar";
 
-import { SettingsPanel } from "../../../components/ui/panels/SettingsPanel";
-import { PanelManager } from "../../../components/ui/utils/PanelManager";
-import { ShopPanel } from "../../../components/ui/panels/ShopPanel";
-import { FridgePanel } from "../../../components/ui/panels/FriggePanel";
-import { GamePanel } from "../../../components/ui/panels/GamePanel";
-import { PausePanel } from "../../../components/ui/panels/PausePanel";
-import { InGameSettings } from "../../../components/ui/panels/InGameSettingsPanel";
+import { SettingsPanel } from "../../components/ui/panels/SettingsPanel";
+import { PanelManager } from "../../components/ui/utils/PanelManager";
+import { ShopPanel } from "../../components/ui/panels/ShopPanel";
+import { FridgePanel } from "../../components/ui/panels/FriggePanel";
+import { GamePanel } from "../../components/ui/panels/GamePanel";
+import { PausePanel } from "../../components/ui/panels/PausePanel";
+import { InGameSettings } from "../../components/ui/panels/InGameSettingsPanel";
 
 export type MenuTypes =
     | "Shop"

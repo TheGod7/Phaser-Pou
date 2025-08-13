@@ -2,18 +2,13 @@ import Phaser from "phaser";
 
 import { ButtonText } from "../TextButton";
 import { ImgButton } from "../ImageButton";
-import {
-    Foods,
-    FoodsStats,
-    FoodTypes,
-    PouStates,
-} from "../../../game/PouState";
-import { GameManager } from "../../../game/scenes/Game/GameManager";
+import { Foods, FoodsStats, FoodTypes, PouStates } from "../../../PouState";
+import { GameManager } from "../../../scenes/Game/GameManager";
 import ScrollablePanel from "phaser3-rex-plugins/templates/ui/scrollablepanel/ScrollablePanel";
 import Sizer from "phaser3-rex-plugins/templates/ui/sizer/Sizer";
 import { soundManager } from "../utils/sound";
-import { MainMenu } from "../../../game/scenes/Game/MainMenu";
-import { RoomsManager } from "../../../game/scenes/Rooms/Rooms";
+import { MainMenu } from "../../../scenes/Game/MainMenu";
+import { RoomsManager } from "../../../scenes/Rooms/Rooms";
 import { kitchenMenu } from "../rooms/KitchenBottomMenu";
 
 export class ShopPanel extends ScrollablePanel {

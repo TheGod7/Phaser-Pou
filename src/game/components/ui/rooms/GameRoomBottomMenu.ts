@@ -1,9 +1,9 @@
 import Phaser from "phaser";
 import { ImgButton } from "../ImageButton";
 import Sizer from "phaser3-rex-plugins/templates/ui/sizer/Sizer";
-import { RoomsManager } from "../../../game/scenes/Rooms/Rooms";
+import { RoomsManager } from "../../../scenes/Rooms/Rooms";
 import { soundManager } from "../utils/sound";
-import { MainMenu } from "../../../game/scenes/Game/MainMenu";
+import { MainMenu } from "../../../scenes/Game/MainMenu";
 
 export class GameRoomBottomMenu extends Phaser.GameObjects.Container {
     name: string = "GameRoomBottomMenu";

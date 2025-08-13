@@ -3,8 +3,8 @@ import RoundRectangleProgress from "phaser3-rex-plugins/plugins/roundrectanglepr
 import Sizer from "phaser3-rex-plugins/templates/ui/sizer/Sizer";
 import { CoinLabel } from "./CoinLabel";
 import { ImgButton } from "../ImageButton";
-import { PouStates } from "../../../game/PouState";
-import { MainMenu } from "../../../game/scenes/Game/MainMenu";
+import { PouStates } from "../../../PouState";
+import { MainMenu } from "../../../scenes/Game/MainMenu";
 enum StatusBarEnum {
     Energy = 0,
     Hunger = 1,

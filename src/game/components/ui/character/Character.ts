@@ -1,5 +1,5 @@
 import Phaser, { Game } from "phaser";
-import { PouStates } from "../../../game/PouState";
+import { PouStates } from "../../../PouState";
 import { soundManager } from "../utils/sound";
 
 interface Eyes {

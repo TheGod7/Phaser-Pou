@@ -4,7 +4,7 @@ import food from "./../../assets/food.assets";
 import Backgrounds from "./../../assets/bacgrounds.assets";
 import Char from "./../../assets/character.assets";
 import Game from "./../../assets/game.assets";
-import { simpleButtonAnim } from "../../../components/ui/utils/SimpleButtonAnim";
+import { simpleButtonAnim } from "../../components/ui/utils/SimpleButtonAnim";
 
 export class Preloader extends Scene {
     page: number;

@@ -1,4 +1,4 @@
-import { PouConfig } from "../../../game/PouState";
+import { PouConfig } from "../../../PouState";
 
 class SoundManager {
     private volume: number = 100;

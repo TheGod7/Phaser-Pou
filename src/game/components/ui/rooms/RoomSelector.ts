@@ -1,6 +1,6 @@
 import Sizer from "phaser3-rex-plugins/templates/ui/sizer/Sizer";
 import { ImgButton } from "../ImageButton";
-import { RoomsManager } from "../../../game/scenes/Rooms/Rooms";
+import { RoomsManager } from "../../../scenes/Rooms/Rooms";
 import Label from "phaser3-rex-plugins/templates/ui/label/Label";
 
 enum Rooms {

@@ -2,9 +2,9 @@ import Phaser from "phaser";
 
 import { VolumeSlider } from "../settings/Volume";
 import { ButtonText } from "../TextButton";
-import { RoomsManager } from "../../../game/scenes/Rooms/Rooms";
+import { RoomsManager } from "../../../scenes/Rooms/Rooms";
 import { soundManager } from "../utils/sound";
-import { PouConfig } from "../../../game/PouState";
+import { PouConfig } from "../../../PouState";
 
 export class SettingsPanel extends Phaser.GameObjects.Container {
     VolumeSlider: VolumeSlider;
@@ -81,11 +81,11 @@ export class SettingsPanel extends Phaser.GameObjects.Container {
             textColor: "#ffffff",
             fontSize: 30,
             Callback: () => {
-               if(scene.scale.isFullscreen){
-                   scene.scale.stopFullscreen();
-               } else {
-                   scene.scale.startFullscreen();
-               }
+                if (scene.scale.isFullscreen) {
+                    scene.scale.stopFullscreen();
+                } else {
+                    scene.scale.startFullscreen();
+                }
             },
             Cooldown: 100,
         });

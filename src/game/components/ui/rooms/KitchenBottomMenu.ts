@@ -1,9 +1,9 @@
 import Phaser from "phaser";
 import { ImgButton } from "../ImageButton";
-import { MainMenu } from "../../../game/scenes/Game/MainMenu";
+import { MainMenu } from "../../../scenes/Game/MainMenu";
 import { KitchenMiddleSpace } from "./KitchenMIddleSpace";
-import { GameManager } from "../../../game/scenes/Game/GameManager";
-import { FoodTypes } from "../../../game/PouState";
+import { GameManager } from "../../../scenes/Game/GameManager";
+import { FoodTypes } from "../../../PouState";
 
 export class kitchenMenu extends Phaser.GameObjects.Container {
     name: string = "KitchenBottomMenu";
@@ -131,7 +131,6 @@ export class kitchenMenu extends Phaser.GameObjects.Container {
                     ([key]) => key === this.currentFood
                 );
 
-                
                 let newIndex = currentFoodIndex;
 
                 if (currentFoodIndex < 0) {
@@ -153,7 +152,6 @@ export class kitchenMenu extends Phaser.GameObjects.Container {
                         MiddleSpace.SetValue("");
                     }
                 } else {
-                  
                     MiddleSpace.setVisible(false);
                     this.NoFood = true;
                 }
@@ -243,7 +241,6 @@ export class kitchenMenu extends Phaser.GameObjects.Container {
 
         if (this.NoFood) {
             const Inventory = this.GameManagerScene.GetFoodInventory();
-            ;
             this.middleSpace.setVisible(true);
 
             const InventoryArray = Object.entries(Inventory);

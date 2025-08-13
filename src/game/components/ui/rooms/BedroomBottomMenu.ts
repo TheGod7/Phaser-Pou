@@ -1,8 +1,7 @@
 import Phaser from "phaser";
-import { GameManager } from "../../../game/scenes/Game/GameManager";
+import { GameManager } from "../../../scenes/Game/GameManager";
 import { ImgButton } from "../ImageButton";
-import { RoomSelector } from "./RoomSelector";
-import { RoomsManager } from "../../../game/scenes/Rooms/Rooms";
+import { RoomsManager } from "../../../scenes/Rooms/Rooms";
 
 export class BedroomBottomMenu extends Phaser.GameObjects.Container {
     name: string = "BedroomBottomMenu";

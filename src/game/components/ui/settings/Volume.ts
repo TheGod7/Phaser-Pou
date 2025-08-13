@@ -1,5 +1,5 @@
 import Label from "phaser3-rex-plugins/templates/ui/label/Label";
-import { PouConfig } from "../../../game/PouState";
+import { PouConfig } from "../../../PouState";
 import { Slider } from "../Slider";
 import Sizer from "phaser3-rex-plugins/templates/ui/sizer/Sizer";
 

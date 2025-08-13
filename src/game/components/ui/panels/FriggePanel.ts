@@ -1,12 +1,12 @@
 import Phaser from "phaser";
-import { GameManager } from "../../../game/scenes/Game/GameManager";
+import { GameManager } from "../../../scenes/Game/GameManager";
 import Sizer from "phaser3-rex-plugins/templates/ui/sizer/Sizer";
 import { ImgButton } from "../ImageButton";
-import { MainMenu } from "../../../game/scenes/Game/MainMenu";
+import { MainMenu } from "../../../scenes/Game/MainMenu";
 import GridSizer from "phaser3-rex-plugins/templates/ui/gridsizer/GridSizer";
-import { Foods, FoodsStats, FoodTypes } from "../../../game/PouState";
+import { Foods, FoodsStats, FoodTypes } from "../../../PouState";
 import { ImgButtonLabel } from "../ImageButtonWithLabel";
-import { RoomsManager } from "../../../game/scenes/Rooms/Rooms";
+import { RoomsManager } from "../../../scenes/Rooms/Rooms";
 import { kitchenMenu } from "../rooms/KitchenBottomMenu";
 
 export class FridgePanel extends Sizer {
@@ -144,7 +144,7 @@ export class FridgePanel extends Sizer {
     Start() {
         this.Hitbox.setVisible(true);
         const Inventory = this.GameManagerScene.GetFoodInventory();
-        
+
         for (const key in FoodsStats) {
             const Food = this.Items.get(key as FoodTypes);
 

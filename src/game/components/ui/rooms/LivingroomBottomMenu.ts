@@ -2,7 +2,7 @@ import Phaser from "phaser";
 import { ImgButton } from "../ImageButton";
 import * as Tone from "tone";
 import { soundManager } from "../utils/sound";
-import { RoomsManager } from "../../../game/scenes/Rooms/Rooms";
+import { RoomsManager } from "../../../scenes/Rooms/Rooms";
 
 const silenceThreshold = 0.05;
 const silenceDuration = 2000;
@@ -24,7 +24,7 @@ export class LivingRoomMenu extends Phaser.GameObjects.Container {
     dest: MediaStreamAudioDestinationNode;
     analyser: AnalyserNode;
 
-    DataArray: Uint8Array;
+    DataArray: Uint8Array<ArrayBuffer>;
     bufferLength: number;
 
     lastSoundTime: number;

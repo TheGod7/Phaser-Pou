@@ -1,5 +1,5 @@
-import { FoodsStats, FoodTypes } from "../../game/PouState";
-import FoodDrop from "../../game/scenes/MiniGame/FoodDrop";
+import { FoodsStats, FoodTypes } from "../../PouState";
+import FoodDrop from "../../scenes/MiniGame/FoodDrop";
 import { soundManager } from "../ui/utils/sound";
 
 const Foods = [

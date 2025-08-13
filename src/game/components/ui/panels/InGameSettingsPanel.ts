@@ -4,8 +4,8 @@ import { VolumeSlider } from "../settings/Volume";
 import { ButtonText } from "../TextButton";
 import { soundManager } from "../utils/sound";
 import { ImgButton } from "../ImageButton";
-import { MainMenu } from "../../../game/scenes/Game/MainMenu";
-import { PouConfig } from "../../../game/PouState";
+import { MainMenu } from "../../../scenes/Game/MainMenu";
+import { PouConfig } from "../../../PouState";
 
 export class InGameSettings extends Phaser.GameObjects.Container {
     VolumeSlider: VolumeSlider;
