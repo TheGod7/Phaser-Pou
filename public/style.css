@@ -5,3 +5,10 @@
     src: url("./fonts/Cookies.ttf");
 }
 
+body {
+    background-color: color-mix(
+        in oklab,
+        var(--color-black) /* #000 = #000000 */ 90%,
+        transparent
+    );
+}

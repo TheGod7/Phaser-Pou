@@ -1,24 +1,45 @@
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import ProjectStructure from "../ProjectStructure";
 
 function App() {
     return (
-        <div className="w-full h-screen bg-black/90 text-white lg:p-40  sm:p-20 p-10 select-none">
-            <h1 className="text-6xl font-bold">Phaser Game</h1>
+        <div className="w-full h-min-screen  text-white lg:p-40  sm:p-20 p-10 select-none">
+            <h1 className="text-6xl font-bold">Foca pou</h1>
 
-            <section className="mt-10 bg-gray-950/30 rounded-3xl p-10">
-                {/* <h2 className="text-4xl font-bold"></h2>
-                 */}
+            <section className="mt-10 bg-gray-950/30 rounded-3xl p-10 h-fu">
+                <p className="text-2xl">
+                    Este es un juego inspirado en <strong>Pou</strong>, donde
+                    cuidarás una mascota virtual que interactúa con distintas
+                    habitaciones.
+                    <br />
+                    <br />
+                    Este proyecto fue desarrollado usando{" "}
+                    <code className="text-orange-500">Phaser 3</code> y{" "}
+                    <code className="text-purple-600">Vite</code>.
+                    <br />
+                    <br />
+                    <strong className="text-orange-500">Phaser 3</strong> es un
+                    basado en JavaScript que utiliza HTML5 para renderizar,
+                    aprovechando tecnologías como <em>Canvas</em> y{" "}
+                    <em>WebGL</em> para ofrecer animaciones fluidas y
+                    experiencias interactivas en el navegador.
+                    <br />
+                    <br />
+                    <strong className="text-purple-600">Vite</strong> es un web
+                    que permite crear aplicaciones rápidas y eficientes usando
+                    JavaScript o TypeScript. En este ejemplo utilizamos React
+                    junto con TypeScript, un superconjunto de JavaScript que
+                    agrega tipos estáticos a variables y funciones, haciendo el
+                    código más seguro, escalable y fácil de mantener.
+                    <br />
+                    <br />
+                </p>
 
-                <p>idandksionjaksdb</p>
+                <br />
+                <br />
+                <ProjectStructure />
             </section>
-            {/* <SyntaxHighlighter
-                language="javascript"
-                style={atomOneDark}
-                showLineNumbers={true}
-            >
-                {"const a = 1;"}
-            </SyntaxHighlighter> */}
         </div>
     );
 }

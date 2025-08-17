@@ -254,15 +254,15 @@ export class Character extends Phaser.GameObjects.Container {
         CursorZone.setInteractive();
         this.setToTop();
 
-        const debug = scene.add.graphics();
+        // const debug = scene.add.graphics();
 
-        debug.lineStyle(1, 0xffffff);
-        debug.strokeRect(
-            CursorZone.x - CursorZone.width / 2,
-            CursorZone.y - CursorZone.height,
-            CursorZone.width,
-            CursorZone.height
-        );
+        // debug.lineStyle(1, 0xffffff, 0);
+        // debug.strokeRect(
+        //     CursorZone.x - CursorZone.width / 2,
+        //     CursorZone.y - CursorZone.height,
+        //     CursorZone.width,
+        //     CursorZone.height
+        // );
 
         scene.input.on("gameout", () => {
             const pointer = scene.input.activePointer;
@@ -270,14 +270,14 @@ export class Character extends Phaser.GameObjects.Container {
 
             this.ObjectsInTarget = undefined;
 
-            debug.clear();
-            debug.lineStyle(1, 0xffffff);
-            debug.strokeRect(
-                CursorZone.x - CursorZone.width / 2,
-                CursorZone.y - CursorZone.height,
-                CursorZone.width,
-                CursorZone.height
-            );
+            // debug.clear();
+            // debug.lineStyle(1, 0xffffff);
+            // debug.strokeRect(
+            //     CursorZone.x - CursorZone.width / 2,
+            //     CursorZone.y - CursorZone.height,
+            //     CursorZone.width,
+            //     CursorZone.height
+            // );
         });
 
         scene.input.on("gameover", () => {
@@ -287,14 +287,14 @@ export class Character extends Phaser.GameObjects.Container {
 
             this.ObjectsInTarget = pointer;
 
-            debug.clear();
-            debug.lineStyle(1, 0x00ff00);
-            debug.strokeRect(
-                CursorZone.x - CursorZone.width / 2,
-                CursorZone.y - CursorZone.height,
-                CursorZone.width,
-                CursorZone.height
-            );
+            // debug.clear();
+            // debug.lineStyle(1, 0x00ff00);
+            // debug.strokeRect(
+            //     CursorZone.x - CursorZone.width / 2,
+            //     CursorZone.y - CursorZone.height,
+            //     CursorZone.width,
+            //     CursorZone.height
+            // );
         });
 
         CursorZone.on("pointerover", (pointer: Phaser.Input.Pointer) => {
@@ -302,28 +302,28 @@ export class Character extends Phaser.GameObjects.Container {
 
             this.ObjectsInTarget = pointer;
 
-            debug.clear();
-            debug.lineStyle(1, 0x00ff00);
-            debug.strokeRect(
-                CursorZone.x - CursorZone.width / 2,
-                CursorZone.y - CursorZone.height,
-                CursorZone.width,
-                CursorZone.height
-            );
+            // debug.clear();
+            // debug.lineStyle(1, 0x00ff00);
+            // debug.strokeRect(
+            //     CursorZone.x - CursorZone.width / 2,
+            //     CursorZone.y - CursorZone.height,
+            //     CursorZone.width,
+            //     CursorZone.height
+            // );
         });
 
         CursorZone.on("pointerout", (pointer: Phaser.Input.Pointer) => {
             if (this.ObjectsInTarget && this.ObjectsInTarget != pointer) return;
 
             this.ObjectsInTarget = undefined;
-            debug.clear();
-            debug.lineStyle(1, 0xffffff);
-            debug.strokeRect(
-                CursorZone.x - CursorZone.width / 2,
-                CursorZone.y - CursorZone.height,
-                CursorZone.width,
-                CursorZone.height
-            );
+            // debug.clear();
+            // debug.lineStyle(1, 0xffffff);
+            // debug.strokeRect(
+            //     CursorZone.x - CursorZone.width / 2,
+            //     CursorZone.y - CursorZone.height,
+            //     CursorZone.width,
+            //     CursorZone.height
+            // );
         });
 
         const loopChain = ["SleepLoop", "SleepLoop2"];
@@ -400,7 +400,7 @@ export class Character extends Phaser.GameObjects.Container {
             RightEye,
             this.CharWithEyes,
             CursorZone,
-            debug,
+            // debug,
         ]);
     }
 
