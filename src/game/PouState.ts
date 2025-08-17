@@ -33,7 +33,7 @@ export type FoodTypes =
     | "pescado"
     | "plastico"
     | "langosta"
-    | "serpiente";
+    | "anguila";
 
 export const FoodsStats: Record<FoodTypes, FoodsStatsInterface> = {
     pulpo: {
@@ -45,7 +45,7 @@ export const FoodsStats: Record<FoodTypes, FoodsStatsInterface> = {
         price: 10,
         hunger: 20,
     },
-    serpiente: {
+    anguila: {
         price: 10,
         hunger: 20,
     },
@@ -84,5 +84,5 @@ export const Foods: FoodTypes[] = [
     "pescado",
     "plastico",
     "langosta",
-    "serpiente",
+    "anguila",
 ];

@@ -21,7 +21,7 @@ export default [
     },
     {
         image: "/assets/ui/food/serpiente.png",
-        key: "serpiente",
+        key: "anguila",
         type: "Image",
     },
     {
