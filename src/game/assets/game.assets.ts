@@ -12,7 +12,7 @@ export default [
     },
     {
         image: "/assets/ui/game/GameIco3.png",
-        key: "Nose",
+        key: "MemoryMatch",
         type: "Image",
     },
     {

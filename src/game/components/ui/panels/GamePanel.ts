@@ -6,12 +6,12 @@ import { RoomsManager } from "../../../scenes/Rooms/Rooms";
 
 const GamesICo = ["FoodDrop", "FlappyBird", "MemoryMatch"];
 
-const GameName = ["Foca Comelona", "Flappy Foca", "Sin Nombre"];
+const GameName = ["Foca Comelona", "Flappy Foca", "Memoria Foca"];
 const GameDescription = [
     "Atrapa los pescados, evita la basura",
     "juega a el juego original de la flappy foca",
 
-    "sin descripcion aun",
+    "Encuntra todos los pares para ganar",
 ];
 
 export class GamePanel extends Sizer {
