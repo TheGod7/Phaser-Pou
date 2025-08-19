@@ -205,6 +205,14 @@ export class GameManager extends Scene {
         if (this.FoodInventory.get(Food)) {
             const RemainingFood = this.FoodInventory.get(Food) ?? 0;
 
+            if (PouStates.hunger < -40) {
+                this.scene.manager.scenes.forEach((scene: Phaser.Scene) => {
+                    this.scene.stop(scene.scene.key);
+                });
+
+                this.scene.start("GameOver");
+                return;
+            }
             if (PouStates.hunger >= 100) return;
             FoodStats.hunger += FoodsStats[Food].hunger;
 
