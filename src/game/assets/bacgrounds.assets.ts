@@ -19,4 +19,9 @@ export default [
         key: "FlappyBirdBackground",
         type: "Image",
     },
+    {
+        image: "/assets/ui/backgrounds/death.png",
+        key: "deathBackground",
+        type: "Image",
+    },
 ] as AssetsElement[];

@@ -137,10 +137,20 @@ export default class FlappyBird extends Phaser.Scene {
         });
 
         this.physics.add.collider(Char, Ground, () => {
+            this.scene.start("GameOverMiniGame", {
+                score: this.score,
+                coins: this.coins,
+                scene: this,
+            });
             this.physics.pause();
         });
 
         this.physics.add.collider(Char, this.PipeGroup, () => {
+            this.scene.start("GameOverMiniGame", {
+                score: this.score,
+                coins: this.coins,
+                scene: this,
+            });
             this.physics.pause();
         });
 

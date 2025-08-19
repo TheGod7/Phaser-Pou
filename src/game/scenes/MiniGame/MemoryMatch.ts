@@ -373,6 +373,12 @@ export default class MemoryMatch extends Phaser.Scene {
 
         if (this.CurrentTime >= this.TimeToPlay) {
             this.inDelay = true;
+
+            this.scene.start("GameOverMiniGame", {
+                score: this.score,
+                coins: this.coins,
+                scene: this,
+            });
         } else {
             this.ProgressBar.setValue(1 - this.CurrentTime / this.TimeToPlay);
         }

@@ -88,6 +88,35 @@ export class GameManager extends Scene {
             },
         });
 
+        let lowStatsTime = 0;
+        const deathThreshold = 40;
+
+        this.time.addEvent({
+            delay: 1000,
+            loop: true,
+            callback: () => {
+                if (
+                    PouStates.hunger <= 0 &&
+                    PouStates.health <= 0 &&
+                    PouStates.energy <= 0
+                ) {
+                    lowStatsTime++;
+
+                    if (lowStatsTime >= deathThreshold) {
+                        this.scene.manager.scenes.forEach(
+                            (scene: Phaser.Scene) => {
+                                this.scene.stop(scene.scene.key);
+                            }
+                        );
+
+                        this.scene.start("GameOver");
+                    }
+                } else {
+                    lowStatsTime = 0;
+                }
+            },
+        });
+
         this.SleepTimer.paused = true;
         this.GamesTimer.paused = true;
 
@@ -163,6 +192,15 @@ export class GameManager extends Scene {
 
     EatFood(Food: FoodTypes) {
         const FoodStats = FoodsStats[Food];
+
+        if (Food == "red_de_pesca") {
+            this.scene.manager.scenes.forEach((scene: Phaser.Scene) => {
+                this.scene.stop(scene.scene.key);
+            });
+
+            this.scene.start("GameOver");
+            return;
+        }
 
         if (this.FoodInventory.get(Food)) {
             const RemainingFood = this.FoodInventory.get(Food) ?? 0;

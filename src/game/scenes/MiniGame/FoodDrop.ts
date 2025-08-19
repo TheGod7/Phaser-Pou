@@ -120,7 +120,12 @@ export default class FoodDrop extends Phaser.Scene {
 
         this.GameStats.SetHearths(this.hearts);
 
-        if (this.hearts <= 0) {
+        if (this.hearts < 0) {
+            this.scene.start("GameOverMiniGame", {
+                score: this.score,
+                coins: this.coins,
+                scene: this,
+            });
         }
     }
 

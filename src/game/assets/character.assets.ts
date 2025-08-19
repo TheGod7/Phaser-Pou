@@ -170,6 +170,12 @@ export default [
     {
         type: "Audio",
         key: "NoSound",
-        audio: "/assets/sfx/character/no.wav",
+        audio: "/assets/sfx/character/No.wav",
+    },
+
+    {
+        type: "Audio",
+        key: "gameOver",
+        audio: "/assets/sfx/gameOver.wav",
     },
 ] as AssetsElement[];

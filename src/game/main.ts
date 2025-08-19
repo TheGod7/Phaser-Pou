@@ -14,6 +14,7 @@ import FoodDrop from "./scenes/MiniGame/FoodDrop";
 import FlappyBird from "./scenes/MiniGame/FlappyBird";
 import { Boot } from "./scenes/Game/Boot";
 import MemoryMatch from "./scenes/MiniGame/MemoryMatch";
+import { GameOverMiniGame } from "./scenes/MiniGame/GameOver";
 //  Find out more information about the Game Config at:
 //  https://docs.phaser.io/api-documentation/typedef/types-core#gameconfig
 
@@ -38,6 +39,7 @@ const config: Phaser.Types.Core.GameConfig = {
         FlappyBird,
         FoodDrop,
         MemoryMatch,
+        GameOverMiniGame,
         GameOver,
     ],
     physics: {

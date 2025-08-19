@@ -1,6 +1,6 @@
 export const PouStates = {
     health: 100,
-    hunger: 10,
+    hunger: 100,
     energy: 100,
     money: 99999,
 };
