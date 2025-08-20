@@ -14,7 +14,7 @@ interface config {
 
 export const PouConfig: config = {
     volume: 100,
-    Background: "RoomBackground1",
+    Background: "RoomBackground2",
 };
 
 export interface FoodsStatsInterface {

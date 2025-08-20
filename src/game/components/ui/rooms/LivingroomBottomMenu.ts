@@ -34,6 +34,8 @@ export class LivingRoomMenu extends Phaser.GameObjects.Container {
 
     mute: boolean = false;
 
+    microPermission: boolean = false;
+
     constructor(scene: Phaser.Scene) {
         super(scene, 0, scene.scale.height);
 
@@ -60,6 +62,11 @@ export class LivingRoomMenu extends Phaser.GameObjects.Container {
         const microImage = new ImgButton(
             scene,
             () => {
+                if (!this.microPermission) {
+                    microImage.setTint(0x808080);
+                    return false;
+                }
+
                 this.microActivated = !this.microActivated;
 
                 if (!this.microActivated) {
@@ -135,30 +142,45 @@ export class LivingRoomMenu extends Phaser.GameObjects.Container {
         this.microImage.clearTint();
         this.mute = false;
         this.cancelRecording = false;
+        this.microPermission = false;
         this.mic = new Tone.UserMedia();
-        await this.mic.open();
 
-        this.pitchShift = new Tone.PitchShift({
-            pitch: 8,
-        });
-        this.dest = this.mic.context.createMediaStreamDestination();
+        try {
+            await this.mic.open();
 
-        this.mic.connect(this.pitchShift);
-        this.pitchShift.connect(this.dest);
+            this.pitchShift = new Tone.PitchShift({
+                pitch: 8,
+            });
+            this.dest = this.mic.context.createMediaStreamDestination();
 
-        this.analyser = Tone.context.createAnalyser();
-        this.analyser.fftSize = 2048;
+            this.mic.connect(this.pitchShift);
+            this.pitchShift.connect(this.dest);
 
-        this.pitchShift.connect(this.analyser);
-        this.bufferLength = this.analyser.fftSize;
-        this.DataArray = new Uint8Array(this.bufferLength);
+            this.analyser = Tone.context.createAnalyser();
+            this.analyser.fftSize = 2048;
 
-        this.microActivated = true;
-        this.lastSoundTime = Date.now();
+            this.pitchShift.connect(this.analyser);
+            this.bufferLength = this.analyser.fftSize;
+            this.DataArray = new Uint8Array(this.bufferLength);
+
+            this.microActivated = true;
+            this.lastSoundTime = Date.now();
+            this.microPermission = true;
+
+            this.microImage.clearTint();
+        } catch (error) {
+            this.microImage.setTint(0x808080);
+        }
     }
 
     update() {
-        if (!this.microActivated || this.TalkingSound || this.mute) return;
+        if (
+            !this.microActivated ||
+            this.TalkingSound ||
+            this.mute ||
+            !this.microPermission
+        )
+            return;
 
         this.analyser.getByteTimeDomainData(this.DataArray);
 
@@ -178,7 +200,6 @@ export class LivingRoomMenu extends Phaser.GameObjects.Container {
                 this.StartRecording();
             }
         } else {
-            // Hay silencio
             if (
                 this.recording &&
                 Date.now() - this.lastSoundTime > silenceDuration

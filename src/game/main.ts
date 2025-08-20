@@ -19,7 +19,6 @@ import { GameOverMiniGame } from "./scenes/MiniGame/GameOver";
 //  https://docs.phaser.io/api-documentation/typedef/types-core#gameconfig
 
 const config: Phaser.Types.Core.GameConfig = {
-    type: Phaser.AUTO,
     width: 462,
     height: 978,
     parent: "game-container",
@@ -95,8 +94,12 @@ const config: Phaser.Types.Core.GameConfig = {
 //     });
 // }
 
-const StartGame = (parent: string) => {
-    return new Phaser.Game({ ...config, parent });
+const StartGame = (parent: string, Chrome: boolean = true) => {
+    return new Phaser.Game({
+        ...config,
+        parent,
+        type: Chrome ? Phaser.CANVAS : Phaser.AUTO,
+    });
 };
 
 export default StartGame;

@@ -1,4 +1,10 @@
-import { forwardRef, useLayoutEffect, useRef } from "react";
+import {
+    forwardRef,
+    useEffect,
+    useLayoutEffect,
+    useRef,
+    useState,
+} from "react";
 import StartGame from "./../game/main";
 
 export interface IRefPhaserGame {
@@ -14,9 +20,18 @@ export const PhaserGame = forwardRef<IRefPhaserGame, IProps>(
     function PhaserGame(_, ref) {
         const game = useRef<Phaser.Game | null>(null!);
 
+        function isChrome() {
+            const ua = navigator.userAgent;
+
+            if (/CriOS/i.test(ua)) return true;
+            if (/Chrome/i.test(ua)) return true;
+
+            return false;
+        }
+
         useLayoutEffect(() => {
             if (game.current === null) {
-                game.current = StartGame("game-container");
+                game.current = StartGame("game-container", isChrome());
 
                 if (typeof ref === "function") {
                     ref({ game: game.current, scene: null });
