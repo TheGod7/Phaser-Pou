@@ -9,6 +9,11 @@ export default [
         },
     },
     {
+        key: "TextBubble",
+        type: "Image",
+        image: "/assets/ui/character/TextBubble.png",
+    },
+    {
         key: "CharacterAnimationSpriteSheet",
         type: "SpriteSheet",
         image: "/assets/ui/character/CharacterAnim.png",

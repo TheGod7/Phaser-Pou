@@ -2,6 +2,20 @@ import Phaser, { Game } from "phaser";
 import { PouStates } from "../../../PouState";
 import { soundManager } from "../utils/sound";
 
+const comments = [
+    "¿Sabías que los humanos cazaban focas como yo por nuestra grasa para hacer aceite? ¡Antes era muy valiosa!",
+
+    "Cuando veas redes en el mar, ¡ten cuidado! Eran una gran amenaza para mi especie y hacian muy dificil encontrar comida.",
+
+    "Los lugares donde viviamos, con aguas claras y llenas de peces, eran nuestro hogar. La contaminacion y la destrucción de estos sitios son muy peligrosas para los animales.",
+
+    "Atrapar la comida que cae del cielo puede parecer divertido, pero recuerda que los cambios en nuestro ambiente pueden traernos alimentos que no son naturales para nosotros.",
+
+    "Esquivar esos tubos de metal no era un juego para nosotros. La llegada de construcciones al mar destruía nuestros espacios para vivir y descansar.",
+
+    "Recuerda mi historia. Aprender sobre las especies que desaparecieron nos ayuda a cuidar mejor a los animales que viven hoy.",
+];
+
 interface Eyes {
     width: number;
     height: number;
@@ -394,13 +408,62 @@ export class Character extends Phaser.GameObjects.Container {
             }
         );
 
+        const bubbleImage = scene.add
+            .image(0, 0, "TextBubble")
+            .setOrigin(0.5, 0.5);
+        bubbleImage.setVisible(true);
+        bubbleImage.setDisplaySize(400, 250);
+        bubbleImage.setPosition(0, -530);
+
+        const bubbleText = scene.add
+            .text(
+                0,
+                -545,
+                "Atrapar la comida que cae del cielo puede parecer divertido, pero recuerda que los cambios en nuestro ambiente pueden traernos alimentos que no son naturales para nosotros",
+                {
+                    // backgroundColor: "#000000",
+                    fontFamily: "Cookies",
+                    stroke: "#000000",
+                    strokeThickness: 5,
+                    fontSize: 20,
+                    wordWrap: {
+                        width: 350,
+                    },
+                    fixedWidth: 350,
+                    fixedHeight: 170,
+                }
+            )
+            .setOrigin(0.5, 0.5);
+
+        bubbleImage.setVisible(false);
+        bubbleText.setVisible(false);
+
+        scene.time.addEvent({
+            delay: 20000,
+            loop: true,
+            callback: () => {
+                bubbleImage.setVisible(true);
+
+                const newComent =
+                    comments[Math.floor(Math.random() * comments.length)];
+                bubbleText.setText(newComent);
+                bubbleText.setVisible(true);
+
+                scene.time.delayedCall(10000, () => {
+                    bubbleImage.setVisible(false);
+                    bubbleText.setVisible(false);
+                });
+            },
+        });
+
         this.add([
             this.Character,
             LeftEye,
             RightEye,
             this.CharWithEyes,
             CursorZone,
-            // debug,
+            bubbleImage,
+            bubbleText,
         ]);
     }
 
