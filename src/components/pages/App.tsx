@@ -4,7 +4,7 @@ import { MobileRedirectSimple } from "../mobileRedirect";
 
 function App() {
     return (
-        <div className="w-full h-min-screen  text-white lg:p-40  sm:p-20 p-10 select-none">
+        <div className="w-full h-min-screen  text-white lg:p-40  sm:p-20 p-10">
             <MobileRedirectSimple to="/game.html" />
             <h1 className="text-6xl font-bold">Foca pou</h1>
 
