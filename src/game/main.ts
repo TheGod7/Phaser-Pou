@@ -38,8 +38,8 @@ const config: Phaser.Types.Core.GameConfig = {
         FlappyBird,
         FoodDrop,
         MemoryMatch,
-        GameOverMiniGame,
         GameOver,
+        GameOverMiniGame,
     ],
     physics: {
         default: "arcade",

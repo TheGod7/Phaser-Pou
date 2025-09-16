@@ -3,6 +3,7 @@ import UI from "./../../assets/ico.assets";
 import food from "./../../assets/food.assets";
 import Backgrounds from "./../../assets/bacgrounds.assets";
 import Char from "./../../assets/character.assets";
+import archivements from "./../../assets/achievements.ssets";
 import Game from "./../../assets/game.assets";
 import { simpleButtonAnim } from "../../components/ui/utils/SimpleButtonAnim";
 
@@ -133,7 +134,7 @@ export class Preloader extends Scene {
     }
 
     preload() {
-        [UI, food, Backgrounds, Char, Game].forEach((list) =>
+        [UI, food, Backgrounds, Char, Game, archivements].forEach((list) =>
             LoadAssets(this, list)
         );
     }
@@ -182,4 +183,3 @@ export function LoadAnimation(scene: Scene, assets: AssetsElement[]) {
             });
         });
 }
-

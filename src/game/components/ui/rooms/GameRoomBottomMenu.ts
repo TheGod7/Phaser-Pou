@@ -52,6 +52,17 @@ export class GameRoomBottomMenu extends Phaser.GameObjects.Container {
             65
         ).setDepth(3);
 
+        const AllAchievements = new ImgButton(
+            scene,
+            () => {
+                MainMenu.OpenMenu("AllAchievements");
+            },
+            "Archievements",
+            0,
+            0,
+            65
+        ).setDepth(3);
+
         this.menuSizer = MenuSizer;
 
         this.ball = scene.physics.add
@@ -162,23 +173,36 @@ export class GameRoomBottomMenu extends Phaser.GameObjects.Container {
             }
         );
 
-        MenuSizer.addSpace();
-        MenuSizer.add(
-            scene.add.rectangle(0, 0, 65, 65, 0x000000, 0).setDepth(2)
-        );
+        // MenuSizer.add(
+        //     scene.add.rectangle(0, 0, 65, 65, 0x000000, 0).setDepth(2)
+        // );
 
-        MenuSizer.add(
-            scene.add.rectangle(0, 0, 65, 65, 0x000000, 0).setDepth(2)
-        );
+        // MenuSizer.add(
+        //     scene.add.rectangle(0, 0, 65, 65, 0x000000, 0).setDepth(2)
+        // );
+
+        // MenuSizer.addSpace(10);
+        // MenuSizer.add(AllAchievements);
+        // MenuSizer.addSpace(3);
+        // MenuSizer.add(this.ball);
+        // MenuSizer.addSpace(3);
+        // MenuSizer.add(Joystick);
+        // MenuSizer.addSpace(10);
+        // MenuSizer.setOrigin(0, 1);
+        // MenuSizer.layout();
+
+        MenuSizer.addBackground(background, { top: 70 });
+
         MenuSizer.addSpace();
+        MenuSizer.add(AllAchievements);
+        MenuSizer.addSpace(3);
         MenuSizer.add(this.ball);
-        MenuSizer.addSpace();
-        MenuSizer.addSpace();
+        MenuSizer.addSpace(3);
         MenuSizer.add(Joystick);
         MenuSizer.addSpace();
+
         MenuSizer.setOrigin(0, 1);
         MenuSizer.layout();
-
         this.add(MenuSizer);
     }
 

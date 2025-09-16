@@ -20,6 +20,11 @@ export default [
         type: "Image",
     },
     {
+        image: "/assets/ui/ico/archievementsIco.png",
+        key: "Archievements",
+        type: "Image",
+    },
+    {
         image: "/assets/ui/ico/coin.png",
         key: "coin",
         type: "Image",

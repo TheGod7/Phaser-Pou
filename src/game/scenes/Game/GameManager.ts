@@ -105,11 +105,13 @@ export class GameManager extends Scene {
                     if (lowStatsTime >= deathThreshold) {
                         this.scene.manager.scenes.forEach(
                             (scene: Phaser.Scene) => {
+                                if (scene.scene.key === "MainMenu") return;
                                 this.scene.stop(scene.scene.key);
                             }
                         );
 
-                        this.scene.start("GameOver");
+                        this.AddAchievement("Muerte");
+                        this.gameOver("Muerte");
                     }
                 } else {
                     lowStatsTime = 0;
@@ -192,13 +194,14 @@ export class GameManager extends Scene {
 
     EatFood(Food: FoodTypes) {
         const FoodStats = FoodsStats[Food];
-
         if (Food == "red_de_pesca") {
             this.scene.manager.scenes.forEach((scene: Phaser.Scene) => {
+                if (scene.scene.key === "MainMenu") return;
                 this.scene.stop(scene.scene.key);
             });
 
-            this.scene.start("GameOver");
+            this.AddAchievement("Psicopata");
+            this.gameOver("Psicopata");
             return;
         }
 
@@ -207,13 +210,19 @@ export class GameManager extends Scene {
 
             if (PouStates.hunger < -40) {
                 this.scene.manager.scenes.forEach((scene: Phaser.Scene) => {
+                    if (scene.scene.key === "MainMenu") return;
                     this.scene.stop(scene.scene.key);
                 });
 
-                this.scene.start("GameOver");
+                this.AddAchievement("Psicopata");
+                this.gameOver("Psicopata");
                 return;
             }
+
             if (PouStates.hunger >= 100) return;
+
+            this.AddAchievement("Tragon");
+
             FoodStats.hunger += FoodsStats[Food].hunger;
 
             this.AddStatus("Hunger", FoodStats.hunger);
@@ -234,5 +243,36 @@ export class GameManager extends Scene {
         PouStates[key] = Math.min(PouStates[key] + value, 100);
 
         MainMenu.StatusBar.SetStatus(stat, PouStates[key]);
+    }
+
+    AddAchievement(name: string) {
+        const MainMenu = this.scene.get("MainMenu") as MainMenu;
+        const AchievementsPanel = MainMenu.AchievementsPanel;
+
+        if (
+            localStorage.getItem(name) == null ||
+            localStorage.getItem(name) !== "true"
+        ) {
+            localStorage.setItem(name, "true");
+            AchievementsPanel.ShowAchievements(name);
+        }
+
+        if (
+            localStorage.getItem("Tragon") == "true" &&
+            localStorage.getItem("Muerte") == "true" &&
+            localStorage.getItem("Platino") !== "true" &&
+            localStorage.getItem("Psicopata") == "true" &&
+            localStorage.getItem("Minijuego") == "true"
+        ) {
+            this.time.delayedCall(1000, () => {
+                this.AddAchievement("Platino");
+            });
+        }
+    }
+
+    gameOver(name?: String) {
+        const MainMenu = this.scene.get("MainMenu") as MainMenu;
+        MainMenu.gameOver();
+        this.scene.launch("GameOver");
     }
 }

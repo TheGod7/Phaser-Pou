@@ -28,6 +28,7 @@ export default class FoodDrop extends Phaser.Scene {
 
         const MainMenu = this.scene.get("MainMenu") as MainMenu;
         const GameManager = this.scene.get("GameManager") as GameManager;
+        GameManager.AddAchievement("Minijuego");
 
         const BackgroundSound = soundManager.playBackground(this, "GameOst");
 

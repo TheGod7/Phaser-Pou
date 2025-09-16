@@ -1,3 +1,4 @@
+import { AchievementsAllPanel } from "../panels/AllArchievementsPanel";
 import { FridgePanel } from "../panels/FriggePanel";
 import { GamePanel } from "../panels/GamePanel";
 import { PausePanel } from "../panels/PausePanel";
@@ -10,6 +11,7 @@ export class PanelManager {
         | GamePanel
         | FridgePanel
         | PausePanel
+        | AchievementsAllPanel
         | null;
 
     constructor() {}
@@ -20,7 +22,8 @@ export class PanelManager {
             | ShopPanel
             | FridgePanel
             | GamePanel
-            | PausePanel,
+            | PausePanel
+            | AchievementsAllPanel,
         data?: any
     ) {
         if (this.currentPanel) {

@@ -8,6 +8,8 @@ import { FridgePanel } from "../../components/ui/panels/FriggePanel";
 import { GamePanel } from "../../components/ui/panels/GamePanel";
 import { PausePanel } from "../../components/ui/panels/PausePanel";
 import { InGameSettings } from "../../components/ui/panels/InGameSettingsPanel";
+import { AchievementsPanel } from "../../components/ui/AchievementsPanel";
+import { AchievementsAllPanel } from "../../components/ui/panels/AllArchievementsPanel";
 
 export type MenuTypes =
     | "Shop"
@@ -15,7 +17,8 @@ export type MenuTypes =
     | "Game"
     | "Settings"
     | "Settings2"
-    | "Pause";
+    | "Pause"
+    | "AllAchievements";
 export class MainMenu extends Scene {
     StatusBar: StatusBar;
     PanelManager: PanelManager;
@@ -26,6 +29,8 @@ export class MainMenu extends Scene {
     GamePanel: GamePanel;
     PausePanel: PausePanel;
     SettingsPanel2: InGameSettings;
+    AchievementsPanel: AchievementsPanel;
+    allAchievementsPanel: AchievementsAllPanel;
 
     constructor() {
         super("MainMenu");
@@ -33,6 +38,11 @@ export class MainMenu extends Scene {
 
     create() {
         this.StatusBar = new StatusBar(this);
+        this.AchievementsPanel = new AchievementsPanel(this);
+        this.AchievementsPanel.setAlpha(0);
+
+        this.allAchievementsPanel = new AchievementsAllPanel(this);
+        this.allAchievementsPanel.setVisible(false);
 
         this.SettingsPanel = new SettingsPanel(this);
         this.SettingsPanel.setVisible(false);
@@ -49,6 +59,8 @@ export class MainMenu extends Scene {
         this.SettingsPanel2.setVisible(false);
 
         this.PanelManager = new PanelManager();
+
+        this.AchievementsPanel.setToTop();
     }
 
     update() {
@@ -75,7 +87,22 @@ export class MainMenu extends Scene {
             case "Settings2":
                 this.PanelManager.setPanel(this.SettingsPanel2);
                 break;
+            case "AllAchievements":
+                this.PanelManager.setPanel(this.allAchievementsPanel);
+                break;
         }
     }
-}
 
+    gameOver() {
+        this.StatusBar.setVisible(false);
+        this.ShopPanel.setVisible(false);
+        this.FridgePanel.setVisible(false);
+        this.GamePanel.setVisible(false);
+        this.SettingsPanel.setVisible(false);
+        this.SettingsPanel2.setVisible(false);
+        this.PausePanel.setVisible(false);
+        this.allAchievementsPanel.setVisible(false);
+
+        this.AchievementsPanel.setToTop();
+    }
+}
