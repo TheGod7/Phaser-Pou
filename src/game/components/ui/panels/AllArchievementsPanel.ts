@@ -66,7 +66,7 @@ export class AchievementsAllPanel extends Sizer {
 
         Header.addSpace(3);
         Header.add(HeaderText, { align: "center-top" });
-        Header.addSpace();
+        // Header.addSpace();
         Header.add(CloseButton, { align: "center-top" });
         Header.addSpace();
         Header.setOrigin(0.5, 0);
